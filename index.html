@@ -21,9 +21,10 @@
             color: #333;
             position: relative;
             overflow-x: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
         
-        /* Logo de fundo transparente */
+        /* Padrão médico sutil no fundo */
         body::before {
             content: '';
             position: fixed;
@@ -31,11 +32,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://i.ibb.co/Stc2YkC/logo-marcelo-medeiros.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 600px;
-            opacity: 0.12; /* 88% transparente */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230d9488' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
             z-index: -1;
             pointer-events: none;
         }
@@ -43,7 +41,7 @@
         /* WhatsApp Flutuante GRANDE */
         .whatsapp-float {
             position: fixed;
-            width: 90px; /* Aumentado 50% */
+            width: 90px;
             height: 90px;
             bottom: 30px;
             right: 30px;
@@ -51,7 +49,7 @@
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 45px; /* Aumentado 50% */
+            font-size: 45px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             display: flex;
@@ -76,7 +74,7 @@
             backdrop-filter: blur(10px);
         }
         
-        /* Hero Section com fontes maiores */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             padding: 100px 0;
@@ -87,7 +85,7 @@
         
         /* Título 50% maior */
         .hero-title {
-            font-size: 3.5rem; /* Aumentado 50% */
+            font-size: 3.5rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -99,7 +97,7 @@
         
         /* Subtítulo 50% maior */
         .hero-subtitle {
-            font-size: 1.8rem; /* Aumentado 50% */
+            font-size: 1.8rem;
             font-weight: 500;
             color: #4b5563;
             margin-bottom: 3rem;
@@ -122,6 +120,7 @@
             display: inline-block;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
         .whatsapp-button:hover {
             transform: translateY(-5px);
@@ -131,8 +130,8 @@
         
         /* Foto placeholder LARGURA AUMENTADA */
         .photo-placeholder {
-            width: 650px; /* 30% mais larga */
-            height: 500px; /* Mantém altura */
+            width: 650px;
+            height: 500px;
             background: linear-gradient(135deg, #e5e7eb, #d1d5db);
             border-radius: 20px;
             margin: 30px auto;
@@ -176,15 +175,16 @@
         .header-agendar-btn {
             background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
             color: white;
-            padding: 12px 35px; /* Aumentado 100% */
+            padding: 12px 35px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem; /* Aumentado */
+            font-size: 1.1rem;
             border: none;
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            cursor: pointer;
         }
         .header-agendar-btn:hover {
             transform: translateY(-3px);
@@ -218,21 +218,6 @@
             .photo-placeholder { width: 300px; height: 230px; }
         }
         
-        /* Animação suave */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        /* Melhor espaçamento */
-        .section-spacing {
-            padding: 100px 0;
-        }
-        
         /* Badge de credencial */
         .credential-badge {
             background: linear-gradient(135deg, var(--teal-primary), var(--dark-teal));
@@ -253,7 +238,7 @@
        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cabeçalho FIXO com informações completas -->
+    <!-- Cabeçalho FIXO -->
     <header>
         <div class="container py-3">
             <div class="d-flex justify-content-between align-items-center">
@@ -278,7 +263,7 @@
 
     <!-- Seção Principal -->
     <section class="hero">
-        <div class="container animate-fade-in">
+        <div class="container">
             <h1 class="hero-title">Cuidado Integral para sua Saúde Mental</h1>
             <p class="hero-subtitle">Atendimento psiquiátrico online com ética, sigilo e expertise profissional</p>
             
@@ -310,14 +295,13 @@
         </div>
     </section>
 
-    <!-- Serviços Especializados COMPLETOS -->
-    <section class="section-spacing">
+    <!-- Serviços Especializados -->
+    <section class="py-5">
         <div class="container">
             <h2 class="text-center display-5 fw-900 mb-5 text-gray-800">
                 Especialidades Psiquiátricas
             </h2>
             <div class="row g-4">
-                <!-- Linha 1 -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-brain fa-3x text-teal-600 mb-3"></i>
@@ -340,7 +324,6 @@
                     </div>
                 </div>
                 
-                <!-- Linha 2 - NOVOS SERVIÇOS -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-user-tag fa-3x text-teal-600 mb-3"></i>
@@ -427,7 +410,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body p-0">
-            <!-- Widget do Calendly -->
             <div class="calendly-inline-widget" 
                  data-url="https://calendly.com/marcelomluis3/30min" 
                  style="min-width:100%;height:750px;"></div>
@@ -444,23 +426,5 @@
 
     <!-- Script do Calendly -->
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    
-    <script>
-        // Animação suave ao rolar
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Site premium do Dr. Marcelo Medeiros carregado!');
-            
-            // Suaviza o scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if(target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
