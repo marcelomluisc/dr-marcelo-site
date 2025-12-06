@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Marcelo Medeiros - Psiquiatria Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+        
+        /* WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { background-color: #128C7E; }
+        
+        /* Cabeçalho */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #0d9488, #0891b2);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: none;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
+            color: white;
+        }
+        
+        /* Foto placeholder */
+        .photo-placeholder {
+            width: 250px;
+            height: 250px;
+            background: #e5e7eb;
+            border-radius: 15px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            border: 3px dashed #9ca3af;
+        }
+        
+        /* Cards */
+        .service-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #0d9488;
+        }
+        
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f766e;
+            margin: 15px 0;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero { padding: 50px 0; }
+            .cta-button { padding: 12px 30px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20informações%20sobre%20consulta" 
+       class="whatsapp-float" target="_blank" title="Fale no WhatsApp">
+       <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h4 mb-0 fw-bold text-teal-800">Dr. Marcelo Medeiros</h1>
+                    <p class="text-muted small mb-0">Psiquiatria Online | CRM 47960</p>
+                </div>
+                <a href="#agendar" class="btn btn-teal btn-sm" style="background: #0d9488; color: white;">
+                    <i class="fas fa-calendar-alt me-1"></i> Agendar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Principal -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3 text-gray-800">Cuidado Integral para sua Saúde Mental</h1>
+            <p class="lead text-gray-600 mb-4">Atendimento psiquiátrico online com ética, sigilo e expertise.</p>
+            
+            <div class="row align-items-center mt-5">
+                <div class="col-md-6">
+                    <!-- Espaço para SUA FOTO -->
+                    <div class="photo-placeholder">
+                        <div class="text-center">
+                            <i class="fas fa-user-md fa-3x mb-3 text-gray-500"></i><br>
+                            <span class="fw-medium">SUA FOTO<br>AQUI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="h3 fw-bold text-teal-700 mb-3">Consulta Online</h2>
+                    <div class="price-tag">R$ 99,90</div>
+                    <p class="text-gray-600 mb-4">
+                        <i class="fas fa-clock text-teal-600 me-1"></i> 30 minutos<br>
+                        <i class="fas fa-video text-teal-600 me-1"></i> Videochamada<br>
+                        <i class="fas fa-file-medical text-teal-600 me-1"></i> Laudo incluso
+                    </p>
+                    <a href="https://calendly.com/marcelomluis3/30min" 
+                       class="cta-button" 
+                       target="_blank" 
+                       id="agendar">
+                        <i class="fas fa-calendar-check me-2"></i>Agendar Consulta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center h2 fw-bold mb-5 text-gray-800">Serviços Especializados</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-brain fa-3x text-teal-600 mb-3"></i>
+                        <h3 class="h5 fw-bold">Ansiedade</h3>
+                        <p class="text-muted">Tratamento para TAG, pânico, fobias e TOC</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-cloud-sun fa-3x text-teal-600 mb-3"></i>
+                        <h3 class="h5 fw-bold">Depressão</h3>
+                        <p class="text-muted">Acompanhamento para transtornos de humor</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-bolt fa-3x text-teal-600 mb-3"></i>
+                        <h3 class="h5 fw-bold">TDAH</h3>
+                        <p class="text-muted">Diagnóstico e tratamento para adultos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagamento -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="h2 fw-bold mb-4 text-gray-800">Pagamento Seguro</h2>
+            <p class="text-muted mb-4">Cartão de crédito, PIX ou link de pagamento</p>
+            <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00" 
+               class="cta-button" 
+               target="_blank">
+               <i class="fas fa-credit-card me-2"></i>Pagar Consulta
+            </a>
+            <p class="small text-muted mt-3">Após o pagamento, agende seu horário no Calendly</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="h5 fw-bold mb-2">Dr. Marcelo Medeiros</h3>
+                    <p class="mb-0 small">CRM 47960 | Pós-graduação em Psiquiatria pelo Hospital Albert Einstein</p>
+                    <p class="small text-white-50 mb-0">Atendimento online conforme resoluções do CFM</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="mailto:marcelomedeirossaudeefitness@gmail.com" class="text-white small">
+                        <i class="fas fa-envelope me-1"></i> E-mail
+                    </a><br>
+                    <a href="https://wa.me/554491339060" class="text-white small">
+                        <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <hr class="my-3 opacity-25">
+            <p class="text-center small text-white-50 mb-0">
+                Para emergências, procure um pronto-socorro ou ligue 188 (CVV)
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para abrir Calendly
+        function openCalendly() {
+            window.open('https://calendly.com/marcelomluis3/30min', '_blank');
+        }
+        
+        // Aviso ao carregar
+        window.onload = function() {
+            console.log('Site do Dr. Marcelo Medeiros carregado com sucesso!');
+        }
+    </script>
+</body>
+</html>
