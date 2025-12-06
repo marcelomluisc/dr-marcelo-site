@@ -6,190 +6,360 @@
     <title>Dr. Marcelo Medeiros - Psiquiatria Online</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+        :root {
+            --whatsapp-green: #25d366;
+            --teal-primary: #0d9488;
+            --dark-teal: #0f766e;
+        }
         
-        /* WhatsApp Flutuante */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #333;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Logo de fundo transparente */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/Stc2YkC/logo-marcelo-medeiros.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 600px;
+            opacity: 0.12; /* 88% transparente */
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* WhatsApp Flutuante GRANDE */
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
+            width: 90px; /* Aumentado 50% */
+            height: 90px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 100;
+            font-size: 45px; /* Aumentado 50% */
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            transition: all 0.3s;
         }
-        .whatsapp-float:hover { background-color: #128C7E; }
+        .whatsapp-float:hover { 
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
         
-        /* Cabeçalho */
+        /* Cabeçalho FIXO */
         header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 99;
+            z-index: 999;
+            backdrop-filter: blur(10px);
         }
         
-        /* Hero Section */
+        /* Hero Section com fontes maiores */
         .hero {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .cta-button {
-            background: linear-gradient(135deg, #0d9488, #0891b2);
+        /* Título 50% maior */
+        .hero-title {
+            font-size: 3.5rem; /* Aumentado 50% */
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--dark-teal), #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* Subtítulo 50% maior */
+        .hero-subtitle {
+            font-size: 1.8rem; /* Aumentado 50% */
+            font-weight: 500;
+            color: #4b5563;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Botão verde WhatsApp */
+        .whatsapp-button {
+            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
             color: white;
-            padding: 15px 40px;
+            padding: 18px 50px;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 800;
+            font-size: 1.4rem;
             border: none;
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            letter-spacing: 0.5px;
         }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.3);
+        .whatsapp-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
             color: white;
         }
         
-        /* Foto placeholder */
+        /* Foto placeholder LARGURA AUMENTADA */
         .photo-placeholder {
-    width: 500px;    /* DOBRO: 250 → 500 */
-    height: 500px;   /* DOBRO: 250 → 500 */
-            background: #e5e7eb;
-            border-radius: 15px;
+            width: 650px; /* 30% mais larga */
+            height: 500px; /* Mantém altura */
+            background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+            border-radius: 20px;
             margin: 30px auto;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #6b7280;
-            border: 3px dashed #9ca3af;
+            border: 4px dashed #9ca3af;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
         
-        /* Cards */
+        /* Cards de serviços */
         .service-card {
-            border: 1px solid #e5e7eb;
-            border-radius: 15px;
-            padding: 30px;
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 35px 25px;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.4s;
             height: 100%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: #0d9488;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.15);
+            border-color: var(--teal-primary);
+            background: linear-gradient(135deg, #f0f9ff, #ffffff);
         }
         
         .price-tag {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #0f766e;
-            margin: 15px 0;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--dark-teal);
+            margin: 20px 0;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Botão agendar no header (100% maior) */
+        .header-agendar-btn {
+            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
+            color: white;
+            padding: 12px 35px; /* Aumentado 100% */
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem; /* Aumentado */
+            border: none;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .header-agendar-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+            color: white;
         }
         
         /* Responsivo */
+        @media (max-width: 1200px) {
+            .photo-placeholder { width: 550px; height: 420px; }
+        }
+        
+        @media (max-width: 992px) {
+            .hero { padding: 70px 0; }
+            .hero-title { font-size: 2.8rem; }
+            .hero-subtitle { font-size: 1.5rem; }
+            .photo-placeholder { width: 450px; height: 350px; }
+        }
+        
         @media (max-width: 768px) {
             .hero { padding: 50px 0; }
-            .cta-button { padding: 12px 30px; font-size: 1rem; }
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .whatsapp-button { padding: 15px 35px; font-size: 1.2rem; }
+            .photo-placeholder { width: 350px; height: 270px; }
+            .whatsapp-float { width: 70px; height: 70px; font-size: 35px; }
+            .header-agendar-btn { padding: 10px 25px; font-size: 0.95rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .photo-placeholder { width: 300px; height: 230px; }
+        }
+        
+        /* Animação suave */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* Melhor espaçamento */
+        .section-spacing {
+            padding: 100px 0;
+        }
+        
+        /* Badge de credencial */
+        .credential-badge {
+            background: linear-gradient(135deg, var(--teal-primary), var(--dark-teal));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20informações%20sobre%20consulta" 
-       class="whatsapp-float" target="_blank" title="Fale no WhatsApp">
+    <!-- WhatsApp Flutuante GRANDE -->
+    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online" 
+       class="whatsapp-float" target="_blank" title="Agende pelo WhatsApp">
        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho FIXO com informações completas -->
     <header>
         <div class="container py-3">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <h1 class="h4 mb-0 fw-bold text-teal-800">Dr. Marcelo Medeiros</h1>
-                    <p class="text-muted small mb-0">Psiquiatria Online | CRM 47960</p>
+                    <h1 class="h4 mb-1 fw-900 text-teal-800" style="font-size: 1.4rem;">
+                        Dr. Marcelo Medeiros
+                    </h1>
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <p class="text-muted small mb-0 fw-600">Psiquiatria Online | CRM 47960</p>
+                        <span class="text-teal-600">•</span>
+                        <p class="text-muted small mb-0 fw-500">
+                            Pós-graduação em Psiquiatria pelo Hospital Albert Einstein
+                        </p>
+                    </div>
                 </div>
-                <a href="#agendar" class="btn btn-teal btn-sm" style="background: #0d9488; color: white;">
-                    <i class="fas fa-calendar-alt me-1"></i> Agendar
-                </a>
+                <button class="header-agendar-btn" data-bs-toggle="modal" data-bs-target="#calendlyModal">
+                    <i class="fas fa-calendar-alt me-2"></i> Agendar Consulta
+                </button>
             </div>
         </div>
     </header>
 
     <!-- Seção Principal -->
     <section class="hero">
-        <div class="container">
-            <h1 class="display-5 fw-bold mb-3 text-gray-800">Cuidado Integral para sua Saúde Mental</h1>
-            <p class="lead text-gray-600 mb-4">Atendimento psiquiátrico online com ética, sigilo e expertise.</p>
+        <div class="container animate-fade-in">
+            <h1 class="hero-title">Cuidado Integral para sua Saúde Mental</h1>
+            <p class="hero-subtitle">Atendimento psiquiátrico online com ética, sigilo e expertise profissional</p>
             
             <div class="row align-items-center mt-5">
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <!-- Espaço para SUA FOTO -->
                     <div class="photo-placeholder">
                         <div class="text-center">
-                            <i class="fas fa-user-md fa-3x mb-3 text-gray-500"></i><br>
-                            <span class="fw-medium">SUA FOTO<br>AQUI</span>
+                            <i class="fas fa-user-md fa-4x mb-3 text-gray-500"></i><br>
+                            <span class="fw-bold fs-5">SUA FOTO AQUI<br><small class="fw-normal">(Formato paisagem)</small></span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h2 class="h3 fw-bold text-teal-700 mb-3">Consulta Online</h2>
+                <div class="col-lg-6">
+                    <h2 class="h2 fw-900 text-teal-700 mb-4">Consulta Online</h2>
                     <div class="price-tag">R$ 99,90</div>
-                    <p class="text-gray-600 mb-4">
-                        <i class="fas fa-clock text-teal-600 me-1"></i> 30 minutos<br>
-                        <i class="fas fa-video text-teal-600 me-1"></i> Videochamada<br>
-    
+                    <p class="text-gray-600 mb-4 fs-5">
+                        <i class="fas fa-clock text-teal-600 me-2"></i> 30 minutos por videochamada<br>
+                        <i class="fas fa-stethoscope text-teal-600 me-2"></i> Diagnóstico e tratamento especializado
                     </p>
-                    <a href="https://calendly.com/marcelomluis3/30min" 
-                       class="cta-button" 
-                       target="_blank" 
-                       id="agendar">
-                        <i class="fas fa-calendar-check me-2"></i>Agendar Consulta
-                    </a>
+                    <button class="whatsapp-button" data-bs-toggle="modal" data-bs-target="#calendlyModal">
+                        <i class="fas fa-calendar-check me-2"></i> Ver Datas e Agendar
+                    </button>
+                    <p class="small text-muted mt-3">
+                        <i class="fas fa-shield-alt text-teal-600 me-1"></i> Pagamento 100% seguro via Stripe
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section class="py-5">
+    <!-- Serviços Especializados COMPLETOS -->
+    <section class="section-spacing">
         <div class="container">
-            <h2 class="text-center h2 fw-bold mb-5 text-gray-800">Serviços Especializados</h2>
+            <h2 class="text-center display-5 fw-900 mb-5 text-gray-800">
+                Especialidades Psiquiátricas
+            </h2>
             <div class="row g-4">
+                <!-- Linha 1 -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-brain fa-3x text-teal-600 mb-3"></i>
-                        <h3 class="h5 fw-bold">Ansiedade</h3>
-                        <p class="text-muted">Tratamento para TAG, pânico, fobias e TOC</p>
+                        <h3 class="h4 fw-800">Ansiedade</h3>
+                        <p class="text-muted">TAG, pânico, fobias e transtorno de ansiedade generalizada</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-cloud-sun fa-3x text-teal-600 mb-3"></i>
-                        <h3 class="h5 fw-bold">Depressão</h3>
-                        <p class="text-muted">Acompanhamento para transtornos de humor</p>
+                        <h3 class="h4 fw-800">Depressão</h3>
+                        <p class="text-muted">Transtornos depressivos e acompanhamento de humor</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-bolt fa-3x text-teal-600 mb-3"></i>
-                        <h3 class="h5 fw-bold">TDAH</h3>
-                        <p class="text-muted">Diagnóstico e tratamento para adultos</p>
+                        <h3 class="h4 fw-800">TDAH Adulto</h3>
+                        <p class="text-muted">Diagnóstico e tratamento para déficit de atenção</p>
+                    </div>
+                </div>
+                
+                <!-- Linha 2 - NOVOS SERVIÇOS -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-user-tag fa-3x text-teal-600 mb-3"></i>
+                        <h3 class="h4 fw-800">Transtornos de Personalidade</h3>
+                        <p class="text-muted">Borderline, antissocial, esquiva e outros</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-balance-scale fa-3x text-teal-600 mb-3"></i>
+                        <h3 class="h4 fw-800">Transtorno Afetivo Bipolar</h3>
+                        <p class="text-muted">TAB tipo I, II e ciclotimia</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-fear fa-3x text-teal-600 mb-3"></i>
+                        <h3 class="h4 fw-800">Fobias Específicas</h3>
+                        <p class="text-muted">Agorafobia, fobia social e fobias específicas</p>
                     </div>
                 </div>
             </div>
@@ -199,37 +369,47 @@
     <!-- Pagamento -->
     <section class="py-5 bg-light">
         <div class="container text-center">
-            <h2 class="h2 fw-bold mb-4 text-gray-800">Pagamento Seguro</h2>
-            <p class="text-muted mb-4">Cartão de crédito, PIX ou link de pagamento</p>
+            <h2 class="display-6 fw-900 mb-4 text-gray-800">Pagamento Seguro e Rápido</h2>
+            <p class="text-muted fs-5 mb-4">Cartão de crédito, PIX, boleto ou link de pagamento</p>
             <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00" 
-               class="cta-button" 
+               class="whatsapp-button" 
                target="_blank">
-               <i class="fas fa-credit-card me-2"></i>Pagar Consulta
+               <i class="fas fa-lock me-2"></i>Pagar Consulta - R$ 99,90
             </a>
-            <p class="small text-muted mt-3">Após o pagamento, agende seu horário no Calendly</p>
+            <p class="small text-muted mt-3">
+                <i class="fas fa-redo text-teal-600 me-1"></i> Reembolso garantido em caso de desistência
+            </p>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 class="h5 fw-bold mb-2">Dr. Marcelo Medeiros</h3>
-                    <p class="mb-0 small">CRM 47960 | Pós-graduação em Psiquiatria pelo Hospital Albert Einstein</p>
-                    <p class="small text-white-50 mb-0">Atendimento online conforme resoluções do CFM</p>
+                <div class="col-lg-8">
+                    <h3 class="h4 fw-900 mb-3">Dr. Marcelo Medeiros</h3>
+                    <p class="mb-2">
+                        <span class="credential-badge">CRM 47960</span>
+                        <span class="credential-badge ms-2">Pós-graduação Albert Einstein</span>
+                    </p>
+                    <p class="small text-white-50 mb-0">
+                        Atendimento online conforme resoluções do CFM e Código de Ética Médica
+                    </p>
                 </div>
-                <div class="col-md-4 text-md-end">
-                    <a href="mailto:marcelomedeirossaudeefitness@gmail.com" class="text-white small">
-                        <i class="fas fa-envelope me-1"></i> E-mail
-                    </a><br>
-                    <a href="https://wa.me/554491339060" class="text-white small">
-                        <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="mailto:marcelomedeirossaudeefitness@gmail.com" 
+                       class="text-white d-block mb-2 fw-600">
+                        <i class="fas fa-envelope me-2"></i> E-mail profissional
+                    </a>
+                    <a href="https://wa.me/554491339060" 
+                       class="text-white d-block fw-600">
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp para dúvidas
                     </a>
                 </div>
             </div>
-            <hr class="my-3 opacity-25">
+            <hr class="my-4 opacity-25">
             <p class="text-center small text-white-50 mb-0">
+                <i class="fas fa-exclamation-triangle me-1"></i> 
                 Para emergências, procure um pronto-socorro ou ligue 188 (CVV)
             </p>
         </div>
@@ -237,18 +417,50 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Modal do Calendly -->
+    <div class="modal fade" id="calendlyModal" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-800">Escolha o melhor horário para sua consulta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-0">
+            <!-- Widget do Calendly -->
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/marcelomluis3/30min" 
+                 style="min-width:100%;height:750px;"></div>
+          </div>
+          <div class="modal-footer">
+            <p class="small text-muted mb-0">
+                <i class="fas fa-info-circle text-teal-600 me-1"></i>
+                Após escolher o horário, você será redirecionado para o pagamento seguro
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script do Calendly -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
     <script>
-        // Função para abrir Calendly
-        function openCalendly() {
-            window.open('https://calendly.com/marcelomluis3/30min', '_blank');
-        }
-        
-        // Aviso ao carregar
-        window.onload = function() {
-            console.log('Site do Dr. Marcelo Medeiros carregado com sucesso!');
-        }
+        // Animação suave ao rolar
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Site premium do Dr. Marcelo Medeiros carregado!');
+            
+            // Suaviza o scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
     </script>
 </body>
-
 </html>
-
