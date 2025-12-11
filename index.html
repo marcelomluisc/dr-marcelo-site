@@ -8,232 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        /* (O CSS está igual, você pode manter todo o estilo original que você enviou) */
         :root {
             --whatsapp-green: #25d366;
             --teal-primary: #0d9488;
             --dark-teal: #0f766e;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            line-height: 1.6; 
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             color: #333;
             position: relative;
             overflow-x: hidden;
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
-        
-        /* Padrão médico sutil no fundo */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230d9488' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.6;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        /* WhatsApp Flutuante GRANDE */
-        .whatsapp-float {
-            position: fixed;
-            width: 90px;
-            height: 90px;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp-green);
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 45px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .whatsapp-float:hover { 
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-        
-        /* Cabeçalho FIXO */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            backdrop-filter: blur(10px);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Título 50% maior */
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--dark-teal), #0891b2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        /* Subtítulo 50% maior */
-        .hero-subtitle {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: #4b5563;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Botão verde WhatsApp */
-        .whatsapp-button {
-            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
-            color: white;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.4rem;
-            border: none;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            letter-spacing: 0.5px;
-            cursor: pointer;
-        }
-        .whatsapp-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
-            color: white;
-        }
-        
-        /* Foto placeholder LARGURA AUMENTADA */
-        .photo-placeholder {
-            width: 650px;
-            height: 500px;
-            background: linear-gradient(135deg, #e5e7eb, #d1d5db);
-            border-radius: 20px;
-            margin: 30px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b7280;
-            border: 4px dashed #9ca3af;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Cards de serviços */
-        .service-card {
-            border: 2px solid #e5e7eb;
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.4s;
-            height: 100%;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.15);
-            border-color: var(--teal-primary);
-            background: linear-gradient(135deg, #f0f9ff, #ffffff);
-        }
-        
-        .price-tag {
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: var(--dark-teal);
-            margin: 20px 0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        /* Botão agendar no header (100% maior) */
-        .header-agendar-btn {
-            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
-            color: white;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: none;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            cursor: pointer;
-        }
-        .header-agendar-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
-            color: white;
-        }
-        
-        /* Responsivo */
-        @media (max-width: 1200px) {
-            .photo-placeholder { width: 550px; height: 420px; }
-        }
-        
-        @media (max-width: 992px) {
-            .hero { padding: 70px 0; }
-            .hero-title { font-size: 2.8rem; }
-            .hero-subtitle { font-size: 1.5rem; }
-            .photo-placeholder { width: 450px; height: 350px; }
-        }
-        
-        @media (max-width: 768px) {
-            .hero { padding: 50px 0; }
-            .hero-title { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .whatsapp-button { padding: 15px 35px; font-size: 1.2rem; }
-            .photo-placeholder { width: 350px; height: 270px; }
-            .whatsapp-float { width: 70px; height: 70px; font-size: 35px; }
-            .header-agendar-btn { padding: 10px 25px; font-size: 0.95rem; }
-        }
-        
-        @media (max-width: 480px) {
-            .photo-placeholder { width: 300px; height: 230px; }
-        }
-        
-        /* Badge de credencial */
-        .credential-badge {
-            background: linear-gradient(135deg, var(--teal-primary), var(--dark-teal));
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 5px;
-        }
+        /* ... (Cole AQUI todo o restante do seu CSS original, sem alterar) ... */
     </style>
 </head>
 <body>
     <!-- WhatsApp Flutuante GRANDE -->
-    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online" 
+    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online"
        class="whatsapp-float" target="_blank" title="Agende pelo WhatsApp">
        <i class="fab fa-whatsapp"></i>
     </a>
@@ -266,7 +61,7 @@
         <div class="container">
             <h1 class="hero-title">Cuidado Integral para sua Saúde Mental</h1>
             <p class="hero-subtitle">Atendimento psiquiátrico online com ética, sigilo e expertise profissional</p>
-            
+
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6">
                     <!-- Espaço para SUA FOTO -->
@@ -323,7 +118,7 @@
                         <p class="text-muted">Diagnóstico e tratamento para déficit de atenção</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-user-tag fa-3x text-teal-600 mb-3"></i>
@@ -354,9 +149,9 @@
         <div class="container text-center">
             <h2 class="display-6 fw-900 mb-4 text-gray-800">Pagamento Seguro e Rápido</h2>
             <p class="text-muted fs-5 mb-4">Cartão de crédito, PIX, boleto ou link de pagamento</p>
-            <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00" 
-               class="whatsapp-button" 
-               target="_blank">
+            <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00"
+               class="whatsapp-button"
+               target="_blank" id="directPaymentButton">
                <i class="fas fa-lock me-2"></i>Pagar Consulta - R$ 99,90
             </a>
             <p class="small text-muted mt-3">
@@ -380,11 +175,11 @@
                     </p>
                 </div>
                 <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                    <a href="mailto:marcelomedeirossaudeefitness@gmail.com" 
+                    <a href="mailto:marcelomedeirossaudeefitness@gmail.com"
                        class="text-white d-block mb-2 fw-600">
                         <i class="fas fa-envelope me-2"></i> E-mail profissional
                     </a>
-                    <a href="https://wa.me/554491339060" 
+                    <a href="https://wa.me/554491339060"
                        class="text-white d-block fw-600">
                         <i class="fab fa-whatsapp me-2"></i> WhatsApp para dúvidas
                     </a>
@@ -392,7 +187,7 @@
             </div>
             <hr class="my-4 opacity-25">
             <p class="text-center small text-white-50 mb-0">
-                <i class="fas fa-exclamation-triangle me-1"></i> 
+                <i class="fas fa-exclamation-triangle me-1"></i>
                 Para emergências, procure um pronto-socorro ou ligue 188 (CVV)
             </p>
         </div>
@@ -400,31 +195,54 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Modal do Calendly -->
+
+    <!-- *** Modal do Calendly MODIFICADO *** -->
     <div class="modal fade" id="calendlyModal" tabindex="-1">
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title fw-800">Escolha o melhor horário para sua consulta</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body p-0">
-            <div class="calendly-inline-widget" 
-                 data-url="https://calendly.com/marcelomluis3/30min" 
-                 style="min-width:100%;height:750px;"></div>
+          <div class="modal-body p-4">
+            <!-- Instruções Claras -->
+            <div class="alert alert-info mb-4">
+              <h6 class="alert-heading"><i class="fas fa-info-circle me-2"></i>Como funciona:</h6>
+              <ol class="mb-0 ps-3">
+                <li>Clique no botão verde abaixo para abrir a agenda.</li>
+                <li>Selecione um horário disponível e preencha seus dados.</li>
+                <li><strong>Após confirmar o agendamento</strong>, você será redirecionado para o pagamento seguro.</li>
+                <li>A consulta só é confirmada após a confirmação do pagamento.</li>
+              </ol>
+            </div>
+
+            <!-- Botão de Ação Primário -->
+            <div class="text-center">
+              <a href="https://calendly.com/marcelomluis3/30min" target="_blank" class="whatsapp-button btn-lg">
+                <i class="fas fa-calendar-day me-2"></i> ABRIR AGENDA DE HORÁRIOS
+              </a>
+              <p class="text-muted small mt-3">
+                A página do Calendly será aberta em uma nova aba.
+              </p>
+            </div>
+
+            <!-- Link de Pagamento Manual (Fallback) -->
+            <div class="mt-4 pt-4 border-top">
+              <p class="text-center mb-2"><strong>Já agendou e precisa pagar?</strong></p>
+              <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00" target="_blank" class="btn btn-outline-success w-100">
+                <i class="fas fa-external-link-alt me-2"></i>Acessar Link de Pagamento Direto
+              </a>
+            </div>
           </div>
           <div class="modal-footer">
             <p class="small text-muted mb-0">
-                <i class="fas fa-info-circle text-teal-600 me-1"></i>
-                Após escolher o horário, você será redirecionado para o pagamento seguro
+                <i class="fas fa-shield-alt text-teal-600 me-1"></i>
+                Sua informação é segura. Pagamento processado via Stripe.
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Script do Calendly -->
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
