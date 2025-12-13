@@ -21,10 +21,9 @@
             color: #333;
             position: relative;
             overflow-x: hidden;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
         
-        /* Padrão médico sutil no fundo */
+        /* Logo de fundo transparente */
         body::before {
             content: '';
             position: fixed;
@@ -32,8 +31,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230d9488' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.6;
+            background-image: url('https://i.ibb.co/Stc2YkC/logo-marcelo-medeiros.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 600px;
+            opacity: 0.12;
             z-index: -1;
             pointer-events: none;
         }
@@ -128,7 +130,7 @@
             color: white;
         }
         
-        /* Foto placeholder LARGURA AUMENTADA */
+        /* Foto placeholder */
         .photo-placeholder {
             width: 650px;
             height: 500px;
@@ -145,7 +147,7 @@
             overflow: hidden;
         }
         
-        /* Cards de serviços */
+        /* Cards de serviços com POPUP */
         .service-card {
             border: 2px solid #e5e7eb;
             border-radius: 20px;
@@ -155,12 +157,54 @@
             height: 100%;
             background: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            cursor: pointer;
         }
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(13, 148, 136, 0.15);
             border-color: var(--teal-primary);
             background: linear-gradient(135deg, #f0f9ff, #ffffff);
+        }
+        
+        /* Popup de informações científicas */
+        .service-popup {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 10;
+            margin-top: 10px;
+            text-align: left;
+            border: 2px solid var(--teal-primary);
+        }
+        .service-card:hover .service-popup {
+            display: block;
+            animation: fadeInUp 0.3s ease-out;
+        }
+        
+        .service-popup h5 {
+            color: var(--dark-teal);
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0f9ff;
+            padding-bottom: 5px;
+        }
+        
+        .service-popup ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .service-popup li {
+            margin-bottom: 5px;
+            color: #4b5563;
+            font-size: 0.9rem;
         }
         
         .price-tag {
@@ -171,7 +215,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        /* Botão agendar no header (100% maior) */
+        /* Botão agendar no header */
         .header-agendar-btn {
             background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
             color: white;
@@ -192,6 +236,24 @@
             color: white;
         }
         
+        /* Animação do popup */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Badge de credencial */
+        .credential-badge {
+            background: linear-gradient(135deg, var(--teal-primary), var(--dark-teal));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
         /* Responsivo */
         @media (max-width: 1200px) {
             .photo-placeholder { width: 550px; height: 420px; }
@@ -202,6 +264,15 @@
             .hero-title { font-size: 2.8rem; }
             .hero-subtitle { font-size: 1.5rem; }
             .photo-placeholder { width: 450px; height: 350px; }
+            .service-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+                max-width: 400px;
+                z-index: 1000;
+            }
         }
         
         @media (max-width: 768px) {
@@ -217,23 +288,11 @@
         @media (max-width: 480px) {
             .photo-placeholder { width: 300px; height: 230px; }
         }
-        
-        /* Badge de credencial */
-        .credential-badge {
-            background: linear-gradient(135deg, var(--teal-primary), var(--dark-teal));
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 5px;
-        }
     </style>
 </head>
 <body>
     <!-- WhatsApp Flutuante GRANDE -->
-    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online" 
+    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online%20de%2030%20minutos%20(R$%2099,90)" 
        class="whatsapp-float" target="_blank" title="Agende pelo WhatsApp">
        <i class="fab fa-whatsapp"></i>
     </a>
@@ -254,9 +313,10 @@
                         </p>
                     </div>
                 </div>
-                <button class="header-agendar-btn" data-bs-toggle="modal" data-bs-target="#calendlyModal">
-                    <i class="fas fa-calendar-alt me-2"></i> Agendar Consulta
-                </button>
+                <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online%20de%2030%20minutos%20(R$%2099,90)" 
+                   class="header-agendar-btn" target="_blank">
+                    <i class="fab fa-whatsapp me-2"></i> Agendar via WhatsApp
+                </a>
             </div>
         </div>
     </header>
@@ -281,68 +341,151 @@
                     <h2 class="h2 fw-900 text-teal-700 mb-4">Consulta Online</h2>
                     <div class="price-tag">R$ 99,90</div>
                     <p class="text-gray-600 mb-4 fs-5">
-                        <i class="fas fa-clock text-teal-600 me-2"></i> 30 minutos por videochamada<br>
+                        <i class="fas fa-video text-teal-600 me-2"></i> Videochamada de 30 minutos<br>
                         <i class="fas fa-stethoscope text-teal-600 me-2"></i> Diagnóstico e tratamento especializado
                     </p>
-                    <button class="whatsapp-button" data-bs-toggle="modal" data-bs-target="#calendlyModal">
-                        <i class="fas fa-calendar-check me-2"></i> Ver Datas e Agendar
-                    </button>
+                    <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online%20de%2030%20minutos%20(R$%2099,90)" 
+                       class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp me-2"></i> Agendar via WhatsApp
+                    </a>
                     <p class="small text-muted mt-3">
-                        <i class="fas fa-shield-alt text-teal-600 me-1"></i> Pagamento 100% seguro via Stripe
+                        <i class="fas fa-shield-alt text-teal-600 me-1"></i> Pagamento 100% seguro via PIX/Cartão
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços Especializados -->
+    <!-- Serviços Especializados com POPUPS -->
     <section class="py-5">
         <div class="container">
             <h2 class="text-center display-5 fw-900 mb-5 text-gray-800">
                 Especialidades Psiquiátricas
             </h2>
             <div class="row g-4">
+                <!-- Ansiedade -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-brain fa-3x text-teal-600 mb-3"></i>
                         <h3 class="h4 fw-800">Ansiedade</h3>
-                        <p class="text-muted">TAG, pânico, fobias e transtorno de ansiedade generalizada</p>
+                        <p class="text-muted">TAG, pânico, fobias e transtorno de ansiedade</p>
+                        
+                        <div class="service-popup">
+                            <h5>Transtornos de Ansiedade</h5>
+                            <ul>
+                                <li><strong>TAG:</strong> Preocupação excessiva e persistente</li>
+                                <li><strong>Síndrome do Pânico:</strong> Crises de ansiedade aguda</li>
+                                <li><strong>Fobias Específicas:</strong> Medo intenso de objetos/situações</li>
+                                <li><strong>TOC:</strong> Pensamentos obsessivos e compulsões</li>
+                                <li><strong>TAS:</strong> Medo de avaliação social</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tratamento: Terapia + Medicação (ISRS, BDZ)</p>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Depressão -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-cloud-sun fa-3x text-teal-600 mb-3"></i>
                         <h3 class="h4 fw-800">Depressão</h3>
-                        <p class="text-muted">Transtornos depressivos e acompanhamento de humor</p>
+                        <p class="text-muted">Transtornos depressivos e acompanhamento</p>
+                        
+                        <div class="service-popup">
+                            <h5>Transtornos Depressivos</h5>
+                            <ul>
+                                <li><strong>Depressão Maior:</strong> Episódios de 2+ semanas</li>
+                                <li><strong>Distimia:</strong> Depressão crônica leve</li>
+                                <li><strong>Sazonal (SAD):</strong> Relacionada às estações</li>
+                                <li><strong>Pós-parto:</strong> Após gestação</li>
+                                <li><strong>Melancólica:</strong> Com sintomas psicóticos</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tratamento: Antidepressivos + Psicoterapia</p>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- TDAH -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-bolt fa-3x text-teal-600 mb-3"></i>
                         <h3 class="h4 fw-800">TDAH Adulto</h3>
                         <p class="text-muted">Diagnóstico e tratamento para déficit de atenção</p>
+                        
+                        <div class="service-popup">
+                            <h5>TDAH em Adultos</h5>
+                            <ul>
+                                <li><strong>Tipo Desatento:</strong> Dificuldade de concentração</li>
+                                <li><strong>Tipo Hiperativo:</strong> Impulsividade, inquietação</li>
+                                <li><strong>Tipo Combinado:</strong> Ambos os sintomas</li>
+                                <li><strong>Comorbidades:</strong> Ansiedade, depressão, vícios</li>
+                                <li><strong>Diagnóstico:</strong> ASRS-18, entrevista clínica</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tratamento: Estimulantes + Terapia</p>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- Transtornos de Personalidade -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-user-tag fa-3x text-teal-600 mb-3"></i>
                         <h3 class="h4 fw-800">Transtornos de Personalidade</h3>
                         <p class="text-muted">Borderline, antissocial, esquiva e outros</p>
+                        
+                        <div class="service-popup">
+                            <h5>Cluster A, B, C</h5>
+                            <ul>
+                                <li><strong>Borderline:</strong> Instabilidade emocional</li>
+                                <li><strong>Antissocial:</strong> Desrespeito às normas</li>
+                                <li><strong>Narcisista:</strong> Grandiosidade, falta de empatia</li>
+                                <li><strong>Esquiva:</strong> Inibição social, sensibilidade</li>
+                                <li><strong>Obsessivo-Compulsivo:</strong> Perfeccionismo</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tratamento: DBT, Terapia focada</p>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- TAB -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-balance-scale fa-3x text-teal-600 mb-3"></i>
                         <h3 class="h4 fw-800">Transtorno Afetivo Bipolar</h3>
                         <p class="text-muted">TAB tipo I, II e ciclotimia</p>
+                        
+                        <div class="service-popup">
+                            <h5>Transtorno Bipolar</h5>
+                            <ul>
+                                <li><strong>Tipo I:</strong> Mania completa + depressão</li>
+                                <li><strong>Tipo II:</strong> Hipomania + depressão</li>
+                                <li><strong>Ciclotimia:</strong> Oscilações crônicas leves</li>
+                                <li><strong>Mista:</strong> Sintomas simultâneos</li>
+                                <li><strong>Rápido-Ciclador:</strong> 4+ episódios/ano</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tratamento: Estabilizadores de humor</p>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Fobias -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-fear fa-3x text-teal-600 mb-3"></i>
                         <h3 class="h4 fw-800">Fobias Específicas</h3>
                         <p class="text-muted">Agorafobia, fobia social e fobias específicas</p>
+                        
+                        <div class="service-popup">
+                            <h5>Fobias e Medos Patológicos</h5>
+                            <ul>
+                                <li><strong>Agorafobia:</strong> Medo de espaços abertos</li>
+                                <li><strong>Fobia Social:</strong> Medo de situações sociais</li>
+                                <li><strong>Específicas:</strong> Animais, altura, sangue</li>
+                                <li><strong>Ansiedade de Separação:</strong> Adultos</li>
+                                <li><strong>Mutismo Seletivo:</strong> Recusa em falar</li>
+                            </ul>
+                            <p class="small text-muted mb-0">Tratamento: Exposição + CBT</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,15 +495,14 @@
     <!-- Pagamento -->
     <section class="py-5 bg-light">
         <div class="container text-center">
-            <h2 class="display-6 fw-900 mb-4 text-gray-800">Pagamento Seguro e Rápido</h2>
-            <p class="text-muted fs-5 mb-4">Cartão de crédito, PIX, boleto ou link de pagamento</p>
-            <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00" 
-               class="whatsapp-button" 
-               target="_blank">
-               <i class="fas fa-lock me-2"></i>Pagar Consulta - R$ 99,90
+            <h2 class="display-6 fw-900 mb-4 text-gray-800">Agendamento Direto via WhatsApp</h2>
+            <p class="text-muted fs-5 mb-4">Envie uma mensagem e agende sua consulta com segurança</p>
+            <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online%20de%2030%20minutos%20(R$%2099,90)" 
+               class="whatsapp-button" target="_blank">
+               <i class="fab fa-whatsapp me-2"></i>Agendar Consulta - R$ 99,90
             </a>
             <p class="small text-muted mt-3">
-                <i class="fas fa-redo text-teal-600 me-1"></i> Reembolso garantido em caso de desistência
+                <i class="fas fa-check-circle text-teal-600 me-1"></i> Você recebe confirmação imediata
             </p>
         </div>
     </section>
@@ -401,52 +543,37 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Modal do Calendly CORRIGIDO E FUNCIONAL -->
-    <div class="modal fade" id="calendlyModal" tabindex="-1">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-800">Escolha o melhor horário para sua consulta</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body p-4">
-            <!-- Instruções Claras -->
-            <div class="alert alert-info mb-4">
-              <h6 class="alert-heading"><i class="fas fa-info-circle me-2"></i>Como funciona:</h6>
-              <ol class="mb-0 ps-3">
-                <li>Clique no botão verde abaixo para abrir a agenda.</li>
-                <li>Selecione um horário disponível e preencha seus dados.</li>
-                <li><strong>Após confirmar o agendamento</strong>, você será redirecionado para o pagamento seguro.</li>
-                <li>A consulta só é confirmada após a confirmação do pagamento.</li>
-              </ol>
-            </div>
-
-            <!-- Botão de Ação Primário -->
-            <div class="text-center">
-              <a href="https://calendly.com/marcelomluis3/30min" target="_blank" class="whatsapp-button btn-lg">
-                <i class="fas fa-calendar-day me-2"></i> ABRIR AGENDA DE HORÁRIOS
-              </a>
-              <p class="text-muted small mt-3">
-                A página do Calendly será aberta em uma nova aba.
-              </p>
-            </div>
-
-            <!-- Link de Pagamento Manual (Fallback) -->
-            <div class="mt-4 pt-4 border-top">
-              <p class="text-center mb-2"><strong>Já agendou e precisa pagar?</strong></p>
-              <a href="https://buy.stripe.com/bJefZjdyo5Z8dXIeLo7Vm00" target="_blank" class="btn btn-outline-success w-100">
-                <i class="fas fa-external-link-alt me-2"></i>Acessar Link de Pagamento Direto
-              </a>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <p class="small text-muted mb-0">
-                <i class="fas fa-shield-alt text-teal-600 me-1"></i>
-                Sua informação é segura. Pagamento processado via Stripe.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <script>
+        // Fechar popups ao clicar fora (mobile)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fecha popups ao tocar fora (mobile)
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.service-card')) {
+                    document.querySelectorAll('.service-popup').forEach(popup => {
+                        popup.style.display = 'none';
+                    });
+                }
+            });
+            
+            // Melhor experiência mobile para popups
+            if (window.innerWidth <= 992) {
+                document.querySelectorAll('.service-card').forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const popup = this.querySelector('.service-popup');
+                        const isVisible = popup.style.display === 'block';
+                        
+                        // Fecha todos os outros
+                        document.querySelectorAll('.service-popup').forEach(p => {
+                            p.style.display = 'none';
+                        });
+                        
+                        // Abre/fecha este
+                        popup.style.display = isVisible ? 'none' : 'block';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
