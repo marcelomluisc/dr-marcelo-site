@@ -85,7 +85,6 @@
             overflow: hidden;
         }
         
-        /* Título 50% maior */
         .hero-title {
             font-size: 3.5rem;
             font-weight: 900;
@@ -97,7 +96,6 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        /* Subtítulo 50% maior */
         .hero-subtitle {
             font-size: 1.8rem;
             font-weight: 500;
@@ -130,7 +128,7 @@
             color: white;
         }
         
-        /* Container da foto e bio - POSICIONAMENTO RELATIVO */
+        /* Container da foto e bio */
         .photo-bio-container {
             position: relative;
             width: 100%;
@@ -163,12 +161,12 @@
             box-shadow: 0 15px 35px rgba(13, 148, 136, 0.15);
         }
         
-        /* Popup da Biografia à DIREITA - POSICIONAMENTO FIXO NA TELA */
+        /* Popup da Biografia */
         .bio-popup {
             display: none;
             position: absolute;
             top: 0;
-            left: 520px; /* Ao lado direito da foto */
+            left: 520px;
             width: 500px;
             height: 500px;
             background: white;
@@ -212,7 +210,7 @@
             margin-bottom: 8px;
         }
         
-        /* Cards de serviços - POSICIONAMENTO AJUSTADO */
+        /* Cards de serviços */
         .service-card {
             border: 2px solid #e5e7eb;
             border-radius: 20px;
@@ -224,7 +222,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             position: relative;
             cursor: pointer;
-            margin-bottom: 30px; /* Espaço extra para popup */
+            margin-bottom: 30px;
         }
         .service-card:hover {
             transform: translateY(-10px);
@@ -233,7 +231,7 @@
             background: linear-gradient(135deg, #f0f9ff, #ffffff);
         }
         
-        /* Popup de informações científicas - TODOS ACIMA DA LINHA */
+        /* Popup de informações científicas */
         .service-popup {
             display: none;
             position: absolute;
@@ -241,20 +239,13 @@
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            z-index: 2000; /* MUITO ALTO - acima de tudo */
+            z-index: 2000;
             text-align: left;
             border: 2px solid var(--teal-primary);
             width: 350px;
-            bottom: calc(100% + 20px); /* Acima do card com margem */
+            bottom: calc(100% + 20px);
             left: 50%;
             transform: translateX(-50%);
-        }
-        
-        /* Garantir que popups da primeira linha fiquem acima da foto */
-        .service-card:nth-child(1) .service-popup,
-        .service-card:nth-child(2) .service-popup,
-        .service-card:nth-child(3) .service-popup {
-            z-index: 2001; /* Ainda mais alto */
         }
         
         .service-card:hover .service-popup {
@@ -347,7 +338,6 @@
         
         /* Responsivo */
         @media (min-width: 1200px) {
-            /* Em telas grandes, a bio fica ao lado da foto */
             .photo-bio-container {
                 min-height: 500px;
             }
@@ -360,7 +350,6 @@
         }
         
         @media (max-width: 1199px) {
-            /* Em telas médias, a bio fica como overlay */
             .photo-bio-container {
                 min-height: 400px;
             }
@@ -423,6 +412,22 @@
                 max-width: 280px;
             }
         }
+        
+        /* História da Psiquiatria */
+        .history-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 80px 0;
+        }
+        
+        .history-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+        
+        .history-text p {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -474,7 +479,7 @@
                             </div>
                         </div>
                         
-                        <!-- Popup da Biografia à DIREITA -->
+                        <!-- Popup da Biografia -->
                         <div class="bio-popup">
                             <h4>Dr. Marcelo Medeiros - Formação e Atuação</h4>
                             
@@ -523,14 +528,14 @@
         </div>
     </section>
 
-    <!-- Serviços Especializados com TODOS POPUPS ACIMA -->
+    <!-- Serviços Especializados -->
     <section class="py-5" style="position: relative; z-index: 10;">
         <div class="container">
             <h2 class="text-center display-5 fw-900 mb-5 text-gray-800">
                 Especialidades Psiquiátricas
             </h2>
             <div class="row g-4" style="position: relative;">
-                <!-- Ansiedade (popup ACIMA) -->
+                <!-- Ansiedade -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-brain fa-3x text-teal-600 mb-3"></i>
@@ -553,7 +558,7 @@
                     </div>
                 </div>
                 
-                <!-- Depressão (popup ACIMA) -->
+                <!-- Depressão -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-cloud-sun fa-3x text-teal-600 mb-3"></i>
@@ -576,7 +581,7 @@
                     </div>
                 </div>
                 
-                <!-- TDAH (popup ACIMA) -->
+                <!-- TDAH -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-bolt fa-3x text-teal-600 mb-3"></i>
@@ -599,7 +604,7 @@
                     </div>
                 </div>
                 
-                <!-- Transtornos de Personalidade (popup ACIMA) -->
+                <!-- Transtornos de Personalidade -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-user-tag fa-3x text-teal-600 mb-3"></i>
@@ -622,7 +627,7 @@
                     </div>
                 </div>
                 
-                <!-- TAB (popup ACIMA) -->
+                <!-- TAB -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-balance-scale fa-3x text-teal-600 mb-3"></i>
@@ -645,7 +650,7 @@
                     </div>
                 </div>
                 
-                <!-- Fobias (popup ACIMA) -->
+                <!-- Fobias -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-fear fa-3x text-teal-600 mb-3"></i>
@@ -671,17 +676,88 @@
         </div>
     </section>
 
-    <!-- Agendamento -->
+    <!-- Seção da Especialização -->
     <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-900 mb-4 text-gray-800">Especialização e Autorização</h2>
+                    <p class="fs-5 text-gray-600 mb-4">
+                        Médico psiquiatra com <strong>CRM 47960</strong>, especializado em saúde mental adulta. 
+                        Pós-graduado pelo renomado <strong>Hospital Albert Einstein</strong>, com abordagem 
+                        humanizada e baseada em evidências científicas.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Atua no diagnóstico e tratamento de transtornos mentais com ética, respeito à 
+                        individualidade e compromisso com o bem-estar integral dos pacientes.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <span class="credential-badge">CRM 47960</span>
+                        <span class="credential-badge">Pós-graduação Albert Einstein</span>
+                        <span class="credential-badge">Atendimento Online Autorizado</span>
+                        <span class="credential-badge">Ética Médica CFM</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5 mt-lg-0 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow">
+                        <i class="fas fa-award fa-4x text-teal-600 mb-3"></i>
+                        <h3 class="h4 fw-800 mb-3">Certificação</h3>
+                        <p class="text-muted mb-0">
+                            Credenciado para atendimento online conforme resolução CFM nº 2.314/2022
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- História da Psiquiatria -->
+    <section class="history-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="display-6 fw-900 mb-4 text-center text-gray-800">A Evolução da Psiquiatria</h2>
+                    
+                    <div class="history-text">
+                        <p>A psiquiatria é uma das especialidades médicas que mais evoluiu nas últimas décadas. De abordagens primitivas e estigmatizantes, passamos para uma ciência baseada em evidências, neurociência e humanização do cuidado.</p>
+                        
+                        <p>Na antiguidade, os transtornos mentais eram frequentemente atribuídos a causas sobrenaturais. Com Hipócrates (460-370 a.C.) surgiram as primeiras tentativas de compreensão biológica, classificando as doenças mentais em melancolia, mania e frenite.</p>
+                        
+                        <p>O século XIX marcou a psiquiatria como especialidade médica independente, com Philippe Pinel na França defendendo o tratamento moral e humano. No século XX, a descoberta dos primeiros psicofármacos revolucionou o tratamento: clorpromazina (1950) para psicoses, lítio (1949) para bipolaridade, e os primeiros antidepressivos (1957).</p>
+                        
+                        <p>A década de 1980 trouxe a "revolução dos ISRS" (Inibidores Seletivos da Recaptação de Serotonina), com medicamentos mais seguros e eficazes. A partir dos anos 2000, a neurociência avançou com técnicas de imagem cerebral, permitindo compreender as bases biológicas dos transtornos mentais.</p>
+                        
+                        <p>Hoje, a psiquiatria moderna integra:</p>
+                        
+                        <ul>
+                            <li><strong>Psicofarmacologia de precisão:</strong> Medicações específicas para subtipos de transtornos</li>
+                            <li><strong>Neuroimagem:</strong> Ressonância magnética funcional, PET scan</li>
+                            <li><strong>Genética psiquiátrica:</strong> Identificação de marcadores de predisposição</li>
+                            <li><strong>Psicoterapias baseadas em evidências:</strong> TCC, DBT, EMDR</li>
+                            <li><strong>Estimulação cerebral:</strong> TMS, ECT moderna</li>
+                            <li><strong>Telepsiquiatria:</strong> Atendimento remoto com eficácia comprovada</li>
+                        </ul>
+                        
+                        <p>A telepsiquiatria, autorizada pelo CFM desde 2002 e regulamentada pela Resolução 2.314/2022, democratizou o acesso ao cuidado especializado, permitindo atendimento de qualidade independente da localização geográfica.</p>
+                        
+                        <p>Como psiquiatra, integro essa evolução histórica com uma prática clínica atualizada, ética e centrada no paciente, oferecendo tratamento baseado nas melhores evidências científicas disponíveis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão Final de WhatsApp -->
+    <section class="py-5">
         <div class="container text-center">
-            <h2 class="display-6 fw-900 mb-4 text-gray-800">Agendamento Direto via WhatsApp</h2>
-            <p class="text-muted fs-5 mb-4">Envie uma mensagem e agende sua consulta com segurança</p>
+            <h2 class="display-6 fw-900 mb-4 text-gray-800">Agende sua Consulta Online</h2>
+            <p class="text-muted fs-5 mb-4">Atendimento humanizado, sigiloso e baseado em evidências científicas</p>
             <a href="https://wa.me/554491339060?text=Olá,%20Dr.%20Marcelo,%20gostaria%20de%20agendar%20uma%20consulta%20online%20de%2030%20minutos%20(R$%2099,90)" 
                class="whatsapp-button" target="_blank">
-               <i class="fab fa-whatsapp me-2"></i>Agendar Consulta - R$ 99,90
+               <i class="fab fa-whatsapp me-2"></i>Agendar via WhatsApp - R$ 99,90
             </a>
             <p class="small text-muted mt-3">
-                <i class="fas fa-check-circle text-teal-600 me-1"></i> Você recebe confirmação imediata
+                <i class="fas fa-clock text-teal-600 me-1"></i> Atendimento em horários flexíveis, incluindo fins de semana
             </p>
         </div>
     </section>
@@ -734,7 +810,7 @@
                 }
             });
             
-            // Fecha bio ao clicar fora (exceto na foto)
+            // Fecha bio ao clicar fora
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.photo-placeholder') && !e.target.closest('.bio-popup')) {
                     document.querySelector('.bio-popup').style.display = 'none';
@@ -779,4 +855,3 @@
     </script>
 </body>
 </html>
-
