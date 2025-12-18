@@ -76,7 +76,7 @@
             backdrop-filter: blur(10px);
         }
         
-        /* Hero Section com fontes maiores */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             padding: 100px 0;
@@ -85,7 +85,6 @@
             overflow: hidden;
         }
         
-        /* Título 50% maior */
         .hero-title {
             font-size: 3.5rem;
             font-weight: 900;
@@ -97,7 +96,6 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        /* Subtítulo 50% maior */
         .hero-subtitle {
             font-size: 1.8rem;
             font-weight: 500;
@@ -130,10 +128,10 @@
             color: white;
         }
         
-        /* Foto placeholder - AJUSTADO PARA NÃO COBRIR CONTEÚDO */
+        /* Foto placeholder - CORRIGIDO */
         .photo-placeholder {
-            width: 650px; /* LARGURA ORIGINAL */
-            height: 365px; /* ALTURA AUMENTADA proporcionalmente */
+            width: 650px;
+            height: 365px;
             background: linear-gradient(135deg, #e5e7eb, #d1d5db);
             border-radius: 20px;
             margin: 30px auto;
@@ -173,7 +171,7 @@
             text-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        /* Botão agendar no header (100% maior) */
+        /* Botão agendar no header */
         .header-agendar-btn {
             background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
             color: white;
@@ -194,7 +192,7 @@
             color: white;
         }
         
-        /* ========== CORREÇÃO MOBILE SEGURA ========== */
+        /* ========== RESPONSIVO ========== */
         @media (max-width: 992px) {
             .service-card:hover {
                 transform: translateY(-5px) !important;
@@ -210,7 +208,6 @@
             }
         }
         
-        /* Responsivo - AJUSTADO PARA NOVA ALTURA */
         @media (max-width: 1200px) {
             .photo-placeholder { 
                 width: 550px;
@@ -274,6 +271,27 @@
             display: inline-block;
             margin-top: 5px;
         }
+        
+        /* Seção de Vantagens */
+        .benefit-card {
+            border: none;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.15);
+        }
+        
+        /* Sobre */
+        .about-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
     </style>
 </head>
 <body>
@@ -283,7 +301,7 @@
        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cabeçalho FIXO com informações completas -->
+    <!-- Cabeçalho FIXO -->
     <header>
         <div class="container py-3">
             <div class="d-flex justify-content-between align-items-center">
@@ -314,7 +332,7 @@
             
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6">
-                    <!-- Espaço para SUA FOTO (650px de largura) -->
+                    <!-- Espaço para SUA FOTO -->
                     <div class="photo-placeholder">
                         <div class="text-center">
                             <i class="fas fa-user-md fa-4x mb-3 text-gray-500"></i><br>
@@ -340,14 +358,13 @@
         </div>
     </section>
 
-    <!-- Serviços Especializados COMPLETOS -->
+    <!-- Serviços Especializados -->
     <section class="section-spacing">
         <div class="container">
             <h2 class="text-center display-5 fw-900 mb-5 text-gray-800">
                 Especialidades Psiquiátricas
             </h2>
             <div class="row g-4">
-                <!-- Linha 1 -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-brain fa-3x text-teal-600 mb-3"></i>
@@ -370,7 +387,6 @@
                     </div>
                 </div>
                 
-                <!-- Linha 2 - NOVOS SERVIÇOS -->
                 <div class="col-md-4">
                     <div class="service-card">
                         <i class="fas fa-user-tag fa-3x text-teal-600 mb-3"></i>
@@ -396,8 +412,75 @@
         </div>
     </section>
 
-    <!-- Pagamento -->
+    <!-- Vantagens -->
     <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center display-5 fw-900 mb-5 text-gray-800">
+                Vantagens da Consulta Online
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <i class="fas fa-home fa-3x text-teal-600 mb-4"></i>
+                        <h3 class="h4 fw-800 mb-3">Conforto da sua Casa</h3>
+                        <p class="text-muted">Atendimento sem deslocamento, em ambiente familiar e seguro</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <i class="fas fa-user-shield fa-3x text-teal-600 mb-4"></i>
+                        <h3 class="h4 fw-800 mb-3">Sigilo Total</h3>
+                        <p class="text-muted">Conversas 100% confidenciais, protegidas por criptografia</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <i class="fas fa-clock fa-3x text-teal-600 mb-4"></i>
+                        <h3 class="h4 fw-800 mb-3">Flexibilidade de Horário</h3>
+                        <p class="text-muted">Agendamento em horários amplos, incluindo fins de semana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-900 mb-4 text-gray-800">Sobre o Dr. Marcelo Medeiros</h2>
+                    <p class="fs-5 text-gray-600 mb-4">
+                        Médico psiquiatra com <strong>CRM 47960</strong>, especializado em saúde mental adulta. 
+                        Pós-graduado pelo renomado <strong>Hospital Albert Einstein</strong>, com abordagem 
+                        humanizada e baseada em evidências científicas.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Atua no diagnóstico e tratamento de transtornos mentais com ética, respeito à 
+                        individualidade e compromisso com o bem-estar integral dos pacientes.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <span class="credential-badge">CRM 47960</span>
+                        <span class="credential-badge">Pós-graduação Albert Einstein</span>
+                        <span class="credential-badge">Atendimento Online</span>
+                        <span class="credential-badge">Ética Médica</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5 mt-lg-0 text-center">
+                    <div class="bg-white p-4 rounded-3 shadow">
+                        <i class="fas fa-award fa-4x text-teal-600 mb-3"></i>
+                        <h3 class="h4 fw-800 mb-3">Certificação</h3>
+                        <p class="text-muted mb-0">
+                            Credenciado para atendimento online conforme resolução CFM nº 2.314/2022
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagamento -->
+    <section class="py-5">
         <div class="container text-center">
             <h2 class="display-6 fw-900 mb-4 text-gray-800">Pagamento Seguro e Rápido</h2>
             <p class="text-muted fs-5 mb-4">Cartão de crédito, PIX, boleto ou link de pagamento</p>
@@ -457,7 +540,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body p-0">
-            <!-- Widget do Calendly -->
             <div class="calendly-inline-widget" 
                  data-url="https://calendly.com/marcelomluis3/30min" 
                  style="min-width:100%;height:750px;"></div>
@@ -479,7 +561,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Site do Dr. Marcelo Medeiros carregado com sucesso!');
             
-            // Suaviza o scroll para links internos
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
