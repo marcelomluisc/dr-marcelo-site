@@ -35,7 +35,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 600px;
-            opacity: 0.12; /* 88% transparente */
+            opacity: 0.12;
             z-index: -1;
             pointer-events: none;
         }
@@ -43,7 +43,7 @@
         /* WhatsApp Flutuante GRANDE */
         .whatsapp-float {
             position: fixed;
-            width: 90px; /* Aumentado 50% */
+            width: 90px;
             height: 90px;
             bottom: 30px;
             right: 30px;
@@ -51,7 +51,7 @@
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 45px; /* Aumentado 50% */
+            font-size: 45px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             display: flex;
@@ -87,7 +87,7 @@
         
         /* Título 50% maior */
         .hero-title {
-            font-size: 3.5rem; /* Aumentado 50% */
+            font-size: 3.5rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -99,7 +99,7 @@
         
         /* Subtítulo 50% maior */
         .hero-subtitle {
-            font-size: 1.8rem; /* Aumentado 50% */
+            font-size: 1.8rem;
             font-weight: 500;
             color: #4b5563;
             margin-bottom: 3rem;
@@ -130,10 +130,10 @@
             color: white;
         }
         
-        /* Foto placeholder LARGURA AUMENTADA EM 35% (880px) */
+        /* Foto placeholder - AJUSTADO PARA NÃO COBRIR CONTEÚDO */
         .photo-placeholder {
-            width: 880px; /* AUMENTADO 35% (650px → 880px) */
-            height: 500px; /* MANTÉM ALTURA ORIGINAL */
+            width: 650px; /* LARGURA ORIGINAL */
+            height: 365px; /* ALTURA AUMENTADA proporcionalmente */
             background: linear-gradient(135deg, #e5e7eb, #d1d5db);
             border-radius: 20px;
             margin: 30px auto;
@@ -177,10 +177,10 @@
         .header-agendar-btn {
             background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
             color: white;
-            padding: 12px 35px; /* Aumentado 100% */
+            padding: 12px 35px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem; /* Aumentado */
+            font-size: 1.1rem;
             border: none;
             transition: all 0.3s;
             text-decoration: none;
@@ -196,28 +196,25 @@
         
         /* ========== CORREÇÃO MOBILE SEGURA ========== */
         @media (max-width: 992px) {
-            /* Ajusta o hover para não causar conflitos visuais */
             .service-card:hover {
                 transform: translateY(-5px) !important;
             }
             
-            /* Aumenta o espaço entre os cards para não se sobreporem */
             .row.g-4 {
                 row-gap: 2rem !important;
             }
             
-            /* Garante que os cards tenham posicionamento estável */
             .service-card {
                 position: relative;
                 z-index: 1;
             }
         }
         
-        /* Responsivo - AJUSTADO PARA NOVA LARGURA */
+        /* Responsivo - AJUSTADO PARA NOVA ALTURA */
         @media (max-width: 1200px) {
             .photo-placeholder { 
-                width: 720px; /* Reduz proporcionalmente */
-                height: 410px; 
+                width: 550px;
+                height: 310px; 
             }
         }
         
@@ -226,8 +223,8 @@
             .hero-title { font-size: 2.8rem; }
             .hero-subtitle { font-size: 1.5rem; }
             .photo-placeholder { 
-                width: 580px; /* Reduz proporcionalmente */
-                height: 330px; 
+                width: 450px;
+                height: 253px; 
             }
         }
         
@@ -237,8 +234,8 @@
             .hero-subtitle { font-size: 1.2rem; }
             .whatsapp-button { padding: 15px 35px; font-size: 1.2rem; }
             .photo-placeholder { 
-                width: 450px; /* Reduz proporcionalmente */
-                height: 255px; 
+                width: 350px;
+                height: 197px; 
             }
             .whatsapp-float { width: 70px; height: 70px; font-size: 35px; }
             .header-agendar-btn { padding: 10px 25px; font-size: 0.95rem; }
@@ -246,8 +243,8 @@
         
         @media (max-width: 480px) {
             .photo-placeholder { 
-                width: 340px; /* Reduz proporcionalmente */
-                height: 193px; 
+                width: 280px;
+                height: 157px; 
             }
         }
         
@@ -317,11 +314,11 @@
             
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6">
-                    <!-- Espaço para SUA FOTO (880px de largura) -->
+                    <!-- Espaço para SUA FOTO (650px de largura) -->
                     <div class="photo-placeholder">
                         <div class="text-center">
                             <i class="fas fa-user-md fa-4x mb-3 text-gray-500"></i><br>
-                            <span class="fw-bold fs-5">SUA FOTO AQUI<br><small class="fw-normal">(Formato paisagem - 880px)</small></span>
+                            <span class="fw-bold fs-5">SUA FOTO AQUI<br><small class="fw-normal">(Formato paisagem - 650px)</small></span>
                         </div>
                     </div>
                 </div>
@@ -479,11 +476,10 @@
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     
     <script>
-        // Animação suave ao rolar - CÓDIGO SIMPLES E FUNCIONAL
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Site do Dr. Marcelo Medeiros carregado com sucesso!');
             
-            // Suaviza o scroll para links internos (opcional)
+            // Suaviza o scroll para links internos
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
