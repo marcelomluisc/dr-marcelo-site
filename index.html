@@ -14,6 +14,8 @@
             --dark-teal: #0f766e;
             --navy-blue: #0a4b6c;
             --dark-navy: #06344b;
+            --orange-light: #f39c12;
+            --orange-dark: #e67e22;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -93,7 +95,7 @@
         /* Hero Section com fundo mais claro para contraste */
         .hero {
             background: linear-gradient(135deg, #f8fcff 0%, #e6f3fa 100%);
-            padding: 100px 0;
+            padding: 100px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -114,15 +116,15 @@
             font-size: 1.8rem;
             font-weight: 500;
             color: #4b5563;
-            margin-bottom: 3rem;
+            margin-bottom: 0.5rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        /* DESTAQUE PARA ATENDIMENTO IMEDIATO */
+        /* DESTAQUE PARA ATENDIMENTO IMEDIATO - SEM SINAL "=" E LARANJA MAIS CLARO */
         .urgent-badge {
-            background: linear-gradient(135deg, #e67e22, #d35400);
+            background: linear-gradient(135deg, var(--orange-light), var(--orange-dark));
             color: white;
             padding: 18px 30px;
             border-radius: 60px;
@@ -130,8 +132,8 @@
             font-size: 1.8rem;
             letter-spacing: 1.5px;
             display: inline-block;
-            margin: 20px auto 30px;
-            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.3);
+            margin: 15px auto 25px;
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.3);
             text-transform: uppercase;
             border: 3px solid white;
             width: fit-content;
@@ -180,11 +182,12 @@
             color: white;
         }
         
-        /* Container da foto e bio */
+        /* Container da foto e bio - FOTO DESLOCADA PARA CIMA */
         .photo-bio-container {
             position: relative;
             width: 100%;
             min-height: 500px;
+            margin-top: -30px !important; /* Desloca a foto 30px para cima (≈1cm) */
         }
         
         /* Foto placeholder */
@@ -446,6 +449,7 @@
         @media (min-width: 1200px) {
             .photo-bio-container {
                 min-height: 500px;
+                margin-top: -30px !important;
             }
             .bio-popup {
                 display: none;
@@ -458,6 +462,7 @@
         @media (max-width: 1199px) {
             .photo-bio-container {
                 min-height: 400px;
+                margin-top: -20px !important;
             }
             .bio-popup {
                 position: fixed;
@@ -481,12 +486,15 @@
         }
         
         @media (max-width: 992px) {
-            .hero { padding: 70px 0; }
+            .hero { padding: 70px 0 60px; }
             .hero-title { font-size: 2.8rem; }
             .hero-subtitle { font-size: 1.5rem; }
             .photo-placeholder { 
                 height: 350px;
                 max-width: 350px;
+            }
+            .photo-bio-container {
+                margin-top: 0 !important;
             }
             .service-popup {
                 position: fixed;
@@ -504,13 +512,16 @@
         }
         
         @media (max-width: 768px) {
-            .hero { padding: 50px 0; }
+            .hero { padding: 50px 0 40px; }
             .hero-title { font-size: 2.2rem; }
             .hero-subtitle { font-size: 1.2rem; }
             .whatsapp-button { padding: 15px 35px; font-size: 1.2rem; }
             .photo-placeholder { 
                 height: 270px;
                 max-width: 300px;
+            }
+            .photo-bio-container {
+                margin-top: 0 !important;
             }
             .whatsapp-float { width: 70px; height: 70px; font-size: 35px; }
             .header-agendar-btn { padding: 10px 25px; font-size: 0.95rem; }
@@ -611,16 +622,16 @@
         <div class="container">
             <h1 class="hero-title">Cuidado Integral para sua Saúde Mental</h1>
             
-            <!-- NOVO: Atendimento Imediato em DESTAQUE (caixa maior) -->
+            <!-- NOVO: Atendimento Imediato - SEM SINAL "=" E LARANJA MAIS CLARO -->
             <div class="urgent-badge">
-                ⚡ Atendimento imediato = consulta em até 24h úteis ⚡
+                ⚡ Atendimento imediato → consulta em até 24h úteis ⚡
             </div>
             
             <p class="hero-subtitle">Atendimento psiquiátrico online com ética, sigilo e expertise profissional</p>
             
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6">
-                    <!-- Container da foto com bio -->
+                    <!-- Container da foto com bio - DESLOCADA PARA CIMA -->
                     <div class="photo-bio-container">
                         <!-- SUA FOTO EM ALTA QUALIDADE -->
                         <div class="photo-placeholder">
@@ -903,8 +914,8 @@
                         <span class="credential-badge">Pós-graduação Albert Einstein</span>
                         <span class="credential-badge">Atendimento Online Autorizado</span>
                         <span class="credential-badge">Ética Médica CFM</span>
-                        <span class="credential-badge" style="background: linear-gradient(135deg, #e67e22, #d35400);">Experiência em CAPS</span>
-                        <span class="credential-badge" style="background: linear-gradient(135deg, #e67e22, #d35400);">Clínica Particular</span>
+                        <span class="credential-badge" style="background: linear-gradient(135deg, var(--orange-light), var(--orange-dark));">Experiência em CAPS</span>
+                        <span class="credential-badge" style="background: linear-gradient(135deg, var(--orange-light), var(--orange-dark));">Clínica Particular</span>
                     </div>
                 </div>
                 <div class="col-lg-4 mt-5 mt-lg-0 text-center">
